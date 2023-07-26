@@ -3,7 +3,6 @@ import "./styles.css";
 // import { ProductContext } from "../context/productContext";
 import { useLocation, useNavigate } from "react-router";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AuthContext } from "../../context/authContext";
 
@@ -86,13 +85,13 @@ const Login = () => {
           >
             Login as Guest
           </button>
-          <a className="create-new-account" href="/signup">
+          <NavLink className="create-new-account" to="/signup">
             Create New Account
             <ArrowForwardIosIcon
               className="material-symbols-outlined"
               style={{ fontSize: "12px" }}
             />
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
