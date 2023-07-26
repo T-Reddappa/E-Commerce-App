@@ -20,7 +20,6 @@ const Login = () => {
   const loginFormInputHandler = (e) => {
     const { name, value } = e.target;
     setUserCredentials({ ...userCredentials, [name]: value });
-    console.log(userCredentials);
   };
 
   const handleLogin = () => {
