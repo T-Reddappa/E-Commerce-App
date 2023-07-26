@@ -7,7 +7,6 @@ import { ProductContext } from "../../context/productContext";
 import { CartContext } from "../../context/cartContext";
 import { AddressContext } from "../../context/addressContext";
 import { toast } from "react-hot-toast";
-import popper from "../../";
 import { v4 as uuid } from "uuid";
 
 const OrderDetails = () => {
@@ -16,8 +15,7 @@ const OrderDetails = () => {
   const { productDispatch } = useContext(ProductContext);
   const {
     cartState: { cart },
-    prices,
-    totalQuantity,
+
     totalPrice,
     discounts,
     deliveryCharges,

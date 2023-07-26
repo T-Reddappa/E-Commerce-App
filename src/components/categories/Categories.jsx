@@ -1,9 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { ProductContext } from "../../context/productContext";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./categories.css";
-import { CategoryRounded } from "@mui/icons-material";
-import { all } from "axios";
 
 const Categories = () => {
   const {
@@ -16,7 +14,6 @@ const Categories = () => {
 
   useEffect(() => {
     getCategories();
-    console.log(allCategories);
     productDispatch({
       type: "CLEAR_FILTERS",
       payload: {

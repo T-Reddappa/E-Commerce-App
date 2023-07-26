@@ -1,6 +1,4 @@
 import "./App.css";
-// import "./index.css";
-import { Toaster } from "react-hot-toast";
 import Mockman from "mockman-js";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
@@ -13,7 +11,7 @@ import WishlistPage from "./pages/wishlist/WishlistPage";
 import RequiresAuth from "./routes/RequiresAuth";
 import CartPage from "./pages/cart/CartPage";
 import Logout from "./pages/authentication/Logout";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddressModal from "./components/addressModal/AddressModal";
 import ProfilePage from "./pages/profile/ProfilePage";
@@ -24,7 +22,6 @@ import Loading from "./components/loading/Loading";
 import Checkout from "./pages/checkout/Checkout";
 
 function App() {
-  const notify = () => toast("Wow so easy !");
   return (
     <div className="App">
       <ToastContainer />

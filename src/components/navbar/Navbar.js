@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./navbar.css";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
@@ -12,7 +12,6 @@ import { ProductContext } from "../../context/productContext";
 
 const Navbar = () => {
   const {
-    wishlistState,
     wishlistState: { wishlist },
   } = useContext(WishlistContext);
   const { productDispatch, productState } = useContext(ProductContext);
@@ -22,15 +21,6 @@ const Navbar = () => {
   } = useContext(CartContext);
 
   const navigate = useNavigate();
-
-  function handleLogin() {
-    if (token) {
-      logoutHandler();
-      navigate("/logout");
-    } else {
-      navigate("/login");
-    }
-  }
 
   return (
     <nav className="navbar">

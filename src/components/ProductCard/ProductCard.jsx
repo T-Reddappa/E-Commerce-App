@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import "./productCard.css";
 import { Link } from "react-router-dom";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { ToastContainer, toast } from "react-toastify";
 
 import { AuthContext } from "../../context/authContext";
 import { WishlistContext } from "../../context/wishlistContext";
@@ -10,10 +9,8 @@ import { CartContext } from "../../context/cartContext";
 
 const ProductCard = ({ product }) => {
   const { token } = useContext(AuthContext);
-  const { getWishlist, addToWishlist, wishlistState, removeFromWishlist } =
+  const { addToWishlist, wishlistState, removeFromWishlist } =
     useContext(WishlistContext);
-  const { addToCart } = useContext(CartContext);
-  const notify = () => token && toast("Item added to cart");
 
   const wishlistedIds = wishlistState.wishlist.map((product) => product._id);
 

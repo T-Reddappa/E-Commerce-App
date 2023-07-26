@@ -7,7 +7,6 @@ export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
-  const location = useLocation();
 
   const localStorageToken = JSON.parse(
     localStorage.getItem("userLoginDetails")
@@ -26,7 +25,6 @@ export const AuthProvider = ({ children }) => {
         data: { foundUser, encodedToken },
       } = res;
       if (status === 200 || status === 201) {
-        console.log(res.data);
         localStorage.setItem(
           "userLoginDetails",
           JSON.stringify({ user: foundUser, token: encodedToken })
@@ -34,7 +32,6 @@ export const AuthProvider = ({ children }) => {
         setToken(encodedToken);
         setCurrentUser(foundUser);
         toast.success(`Hi, ${foundUser.firstName}!, Welcome!`);
-        // navigate("/", { replace: true });
         navigate("/");
       }
     } catch (e) {
@@ -62,7 +59,7 @@ export const AuthProvider = ({ children }) => {
         );
         setToken(encodedToken);
         setCurrentUser(createdUser);
-        console.log(encodedToken);
+
         toast.success(`Hi, ${createdUser.firstName}!, Welcome!`);
         navigate("/", { replace: true });
       }

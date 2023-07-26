@@ -3,7 +3,6 @@ import AddressModal from "../addressModal/AddressModal";
 import { AuthContext } from "../../context/authContext";
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 import { ProductContext } from "../../context/productContext";
-import { useState } from "react";
 import { AddressContext } from "../../context/addressContext";
 import "./addressList.css";
 

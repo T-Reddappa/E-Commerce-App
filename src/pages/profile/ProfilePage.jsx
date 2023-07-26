@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import "./profilePage.css";
-import { green } from "@mui/material/colors";
 
 const ProfilePage = () => {
   const location = useLocation();

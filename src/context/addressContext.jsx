@@ -1,13 +1,5 @@
-import React, {
-  createContext,
-  useContext,
-  useEffect,
-  useReducer,
-  useState,
-} from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 import { AuthContext } from "./authContext";
-import axios from "axios";
-import { toast } from "react-hot-toast";
 
 export const AddressContext = createContext();
 const initialUserAddress = {
@@ -67,7 +59,7 @@ export const addressReducer = (state, action) => {
       return { ...state, addressFormData: action.payload };
     case "REMOVE_ADDRESS":
       const addressIdToRemove = action.payload;
-      console.log("removeId", action.payload);
+
       const updatedAddresses = state.addresses.filter(
         (address) => address._id !== addressIdToRemove
       );

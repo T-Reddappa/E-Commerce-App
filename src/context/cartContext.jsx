@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { AuthContext } from "./authContext";
 import axios from "axios";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext();

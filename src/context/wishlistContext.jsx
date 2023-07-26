@@ -1,9 +1,7 @@
 import axios from "axios";
 import { createContext, useContext, useReducer } from "react";
 import { AuthContext } from "./authContext";
-import { ReplyTwoTone } from "@mui/icons-material";
-import { ToastContainer, toast } from "react-toastify";
-
+import { toast } from "react-hot-toast";
 export const WishlistContext = createContext();
 
 const wishlistReducer = (state, action) => {
@@ -42,8 +40,6 @@ export const WishlistProvider = ({ children }) => {
       } = res;
       if (status === 200) {
         wishlistDispatch({ type: "DISPLAY_WISHLIST", payload: whislist });
-        console.log("added to wishlist");
-        console.log("added to wishlist");
       }
     } catch (e) {
       console.error(e);
@@ -63,7 +59,6 @@ export const WishlistProvider = ({ children }) => {
         status,
         data: { wishlist },
       } = res;
-      console.log(res);
       if (status === 201) {
         wishlistDispatch({ type: "ADD_TO_wISHLIST", payload: wishlist });
         toast.success(

@@ -38,7 +38,6 @@ const productReducer = (state, action) => {
             : [...state.selectedCategory, action.payload],
       };
     case "FILTER_BY_SEARCH":
-      console.log(action.payload);
       return { ...state, searchInput: action.payload };
     case "SORT_BY_PRICE":
       return { ...state, sortPrice: action.payload };
@@ -53,8 +52,6 @@ const productReducer = (state, action) => {
         allCategories: action.payload.categories,
       };
     case "SORT_BY_SIZE":
-      console.log(action.payload);
-      console.log(state.selectedSizes);
       return {
         ...state,
         selectedSizes: state.selectedSizes.includes(action.payload)

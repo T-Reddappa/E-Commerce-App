@@ -1,16 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useContext } from "react";
-import { toast } from "react-hot-toast";
+
 import { v4 as uuid } from "uuid";
 import "./addressModal.css";
 import { ProductContext } from "../../context/productContext";
-import { useStepContext } from "@mui/material";
+
 import { useState } from "react";
 import { AddressContext } from "../../context/addressContext";
 
 const AddressModal = () => {
-  const { productDispatch, productState } = useContext(ProductContext);
-  const { addressState, addressDispatch } = useContext(AddressContext);
+  const { addressDispatch } = useContext(AddressContext);
 
   const [addressInputs, setAddressInputs] = useState({
     _id: uuid(),

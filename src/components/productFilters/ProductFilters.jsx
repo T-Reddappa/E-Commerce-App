@@ -69,7 +69,6 @@ const ProductFilters = () => {
                     type: "SORT_BY_PRICE",
                     payload: e.target.value,
                   });
-                  console.log(e.target.value);
                 }}
               />
             </div>
