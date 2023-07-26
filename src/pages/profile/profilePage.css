@@ -1,0 +1,55 @@
+.user-account-details {
+  margin: 1rem;
+}
+
+.user-account-details h3 {
+  color: gray;
+  margin-bottom: 1rem;
+}
+
+.account-wrapper {
+  border: 1px solid gray;
+  width: 70%;
+  margin: auto;
+  min-height: 12rem;
+}
+
+.account-nav-tabs {
+  display: flex;
+  justify-content: space-around;
+}
+
+.account-nav-tabs > * {
+  flex: 1 1;
+  text-align: center;
+  padding: 0.5rem 1rem;
+}
+
+.active-tab {
+  text-decoration: none;
+  background-color: lightblue;
+  font-size: 18px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  font-weight: 300;
+  transition: font-size 300ms ease-in-out;
+  border-bottom: 1px solid lightblue;
+}
+
+.idle-tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  color: gray;
+  text-decoration: none;
+  border-bottom: 1px solid gray;
+}
+
+.account-wrapper .account-tab-display {
+  margin: 1rem;
+  text-align: start;
+}

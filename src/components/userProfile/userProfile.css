@@ -1,0 +1,24 @@
+.profile-container {
+  /* border: 1px solid black; */
+  text-align: center;
+  padding: 1rem;
+  line-height: 1.5rem;
+  /* color: gray; */
+}
+
+.profile-container span {
+  color: gray;
+}
+
+.logout-btn {
+  border: none;
+  width: 5rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  outline: 1px solid lightblue;
+  background-color: white;
+}

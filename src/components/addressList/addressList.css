@@ -1,0 +1,33 @@
+.addresses-container {
+  padding: 0 2rem;
+}
+
+.add-address-btn {
+  color: gray;
+  background-color: none;
+  border: none;
+  padding: 0.4rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  display: flex;
+  gap: 3px;
+  padding-left: 10px;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.add-address-btn:hover {
+  outline: 1px solid lightblue;
+  background-color: white;
+  /* color: black; */
+}
+
+.address-box {
+  line-height: 1.5;
+  width: 50%;
+  font-size: 14px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  margin: 0.3rem 0;
+}

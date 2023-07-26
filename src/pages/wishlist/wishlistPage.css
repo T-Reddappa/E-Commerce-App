@@ -1,0 +1,24 @@
+.wishlist-items-box {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  padding: 0 5rem;
+  /* flex-grow: inherit; */
+}
+
+.wishlist-header {
+  /* color: gray; */
+  margin: 1rem 0;
+}
+
+.wishlist-container {
+  color: gray;
+}
+
+.empty-wishlist-banner {
+  margin-bottom: 1rem;
+}
+.explore-store-link {
+  margin-top: 2rem;
+  padding: 0.6rem;
+}
