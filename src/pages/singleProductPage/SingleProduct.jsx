@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import "./singleProductPage.css";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import StarOutlineOutlinedIcon from "@mui/icons-material/StarOutlineOutlined";
@@ -9,7 +8,7 @@ import { ProductContext } from "../../context/productContext";
 import { WishlistContext } from "../../context/wishlistContext";
 import { CartContext } from "../../context/cartContext";
 import { AuthContext } from "../../context/authContext";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../components/loading/Loading";
 

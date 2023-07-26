@@ -1,8 +1,7 @@
 import React, { useContext, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./home.css";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import Navbar from "../../components/navbar/Navbar";
+
 import { ProductContext } from "../../context/productContext";
 import Categories from "../../components/categories/Categories";
 import Loading from "../../components/loading/Loading";
@@ -12,10 +11,7 @@ const Home = () => {
     useContext(ProductContext);
   document.title = "Home | Vestidos";
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   setIsLoading(true);
-  //   setTimeout(() => setIsLoading(false), 300);
-  // }, []);
+
   return (
     <div>
       {isLoading ? (

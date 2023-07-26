@@ -7,17 +7,8 @@ import Loading from "../../components/loading/Loading";
 import { useEffect } from "react";
 
 const ProductListingPage = () => {
-  const {
-    productState,
-    productDispatch,
-    sortByPrice,
-    sortByRating,
-    isLoading,
-    filterBySize,
-    setIsLoading,
-    filterBySearchInput,
-    filteredByCategory,
-  } = useContext(ProductContext);
+  const { sortByRating, isLoading, filterBySize, setIsLoading } =
+    useContext(ProductContext);
 
   useEffect(() => {
     setIsLoading(true);
