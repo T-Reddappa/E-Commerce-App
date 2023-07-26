@@ -11,7 +11,7 @@ import WishlistPage from "./pages/wishlist/WishlistPage";
 import RequiresAuth from "./routes/RequiresAuth";
 import CartPage from "./pages/cart/CartPage";
 import Logout from "./pages/authentication/Logout";
-import { ToastContainer } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AddressModal from "./components/addressModal/AddressModal";
 import ProfilePage from "./pages/profile/ProfilePage";
@@ -24,8 +24,6 @@ import Checkout from "./pages/checkout/Checkout";
 function App() {
   return (
     <div className="App">
-      <ToastContainer />
-
       <Navbar />
 
       <Routes>
@@ -69,6 +67,8 @@ function App() {
           <Route path="orders" element={<Orders />} />
         </Route>
       </Routes>
+
+      <ToastContainer />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { createContext, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 
 export const AuthContext = createContext();
 
@@ -69,6 +69,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const logoutHandler = () => {
+    toast.success(`${currentUser.firstName}, logged out.`);
     localStorage.removeItem("userLoginDetails");
     setToken(null);
     setCurrentUser(null);

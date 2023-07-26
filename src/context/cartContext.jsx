@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useReducer } from "react";
 import { AuthContext } from "./authContext";
 import axios from "axios";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const CartContext = createContext();
@@ -64,16 +64,11 @@ export const CartProvider = ({ children }) => {
 
       if (status === 201) {
         cartDispatch({ type: "ADD_TO_CART", payload: cart });
-        toast.success("Product added to bag successfully!", {
-          position: "top-right",
-          autoClose: 4000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
+        toast.success(
+          <div style={{ fontSize: "12px" }}>
+            Product added to bag successfully!
+          </div>
+        );
       }
     } catch (e) {
       console.log(e);
@@ -97,7 +92,7 @@ export const CartProvider = ({ children }) => {
         cartDispatch({ type: "UPDATE_CART_QUANTITY", payload: cart });
 
         toast.success(
-          <div style={{ fontSize: "10px", height: "1rem" }}>
+          <div style={{ fontSize: "12px" }}>
             {actionType === "increment"
               ? `Added one more ${name} to the Bag
             sucessfully!`
@@ -122,11 +117,7 @@ export const CartProvider = ({ children }) => {
       } = res;
       if (status === 200) {
         cartDispatch({ type: "REMOVE_FROM_CART", payload: cart });
-        toast.success(
-          <div style={{ fontSize: "10px" }}>
-            Removed product from cart successfully!
-          </div>
-        );
+        toast.success(<div>Removed product from cart successfully!</div>);
       }
     } catch (e) {
       console.log(e);

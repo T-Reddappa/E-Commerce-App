@@ -1,7 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./home.css";
-
 import { ProductContext } from "../../context/productContext";
 import Categories from "../../components/categories/Categories";
 import Loading from "../../components/loading/Loading";

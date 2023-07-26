@@ -1,7 +1,8 @@
 import axios from "axios";
 import { createContext, useContext, useReducer } from "react";
 import { AuthContext } from "./authContext";
-import { toast } from "react-hot-toast";
+import { toast } from "react-toastify";
+
 export const WishlistContext = createContext();
 
 const wishlistReducer = (state, action) => {
@@ -62,7 +63,7 @@ export const WishlistProvider = ({ children }) => {
       if (status === 201) {
         wishlistDispatch({ type: "ADD_TO_wISHLIST", payload: wishlist });
         toast.success(
-          <div style={{ fontSize: "10px" }}>
+          <div style={{ fontSize: "12px" }}>
             Added {product.name} to the wishlist sucessfully!
           </div>
         );
@@ -85,7 +86,7 @@ export const WishlistProvider = ({ children }) => {
       if (status === 200) {
         wishlistDispatch({ type: "ADD_TO_wISHLIST", payload: wishlist });
         toast.success(
-          <div style={{ fontSize: "10px" }}>
+          <div style={{ fontSize: "12px" }}>
             Removed product from wishlist sucessfully!
           </div>
         );
