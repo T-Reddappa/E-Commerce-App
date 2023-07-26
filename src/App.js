@@ -24,18 +24,7 @@ import Checkout from "./pages/checkout/Checkout";
 function App() {
   return (
     <div className="App">
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
+      <ToastContainer />
 
       <Navbar />
 
