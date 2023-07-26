@@ -44,7 +44,7 @@ const OrderDetails = () => {
   };
 
   const razorpayOptions = {
-    key: "rzp_test_00dP2uDP2yHZOB",
+    key: "rzp_test_XQioGDBEhYY3jh",
     amount: totalAmount * 100,
     name: "VESTIDOs",
     description: "Thank You For Ordering",
