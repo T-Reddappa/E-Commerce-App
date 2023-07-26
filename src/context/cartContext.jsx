@@ -64,11 +64,16 @@ export const CartProvider = ({ children }) => {
 
       if (status === 201) {
         cartDispatch({ type: "ADD_TO_CART", payload: cart });
-        toast.success(
-          <div style={{ fontSize: "10px", width: "10rem" }}>
-            Added {product.name} to the cart sucessfully!
-          </div>
-        );
+        toast.success("Product added to bag successfully!", {
+          position: "top-right",
+          autoClose: 4000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
       }
     } catch (e) {
       console.log(e);
