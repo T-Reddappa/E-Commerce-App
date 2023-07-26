@@ -38,10 +38,6 @@ const Login = () => {
     });
   };
 
-  toast.success(`Hi, Reddy!`, {
-    icon: "👋",
-  });
-
   return (
     <div>
       <div className="login-cont">
