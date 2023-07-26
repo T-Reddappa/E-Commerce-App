@@ -107,7 +107,7 @@ export const products = [
     color: "Coral ",
     rating: "4",
     size: ["S", "M", "L"],
-    category: "Men",
+    category: "Women",
     imgurl:
       "https://assets.myntassets.com/h_720,q_90,w_540/v1/assets/images/2307694/2019/2/6/49cc0b17-4d24-4de5-b89c-279210d833861549451468448-Vishudh-Women-Coral-Solid-Straight-Kurta-2731549451466702-1.jpg",
   },
