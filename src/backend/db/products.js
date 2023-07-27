@@ -11,7 +11,7 @@ export const products = [
     name: "SLIM FIT CASUAL SHIRT",
     brand: "WROGN",
     price: 2000,
-    color: "green",
+    color: "navy",
     rating: "4",
     size: ["S", "M", "L"],
     category: "Men",
@@ -26,6 +26,7 @@ export const products = [
     rating: "3",
     size: ["S", "M", "L"],
     category: "Men",
+    color: "black",
     imgurl:
       "https://assets.myntassets.com/f_webp,dpr_1.5,q_60,w_210,c_limit,fl_progressive/assets/images/productimage/2019/10/10/f0e6794f-29af-473b-9376-fd53f3f76df11570703044382-1.jpg",
   },
@@ -36,6 +37,7 @@ export const products = [
     brand: "WROGN",
     price: 4000,
     rating: "4",
+    color: "rgb(118, 207, 203)",
     size: ["S", "M", "L"],
     category: "Men",
     imgurl:
@@ -47,6 +49,7 @@ export const products = [
     brand: "WROGN",
     price: 3000,
     rating: "4",
+    color: "white",
     size: ["S", "M", "L"],
     category: "Men",
     imgurl:
@@ -59,6 +62,7 @@ export const products = [
     price: 3000,
     color: "Coffee Brown",
     rating: "4",
+    color: "#653E36",
     size: ["S", "M", "L"],
     category: "Men",
     imgurl:

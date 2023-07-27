@@ -9,7 +9,6 @@ import { WishlistContext } from "../../context/wishlistContext";
 import { CartContext } from "../../context/cartContext";
 import { AuthContext } from "../../context/authContext";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Loading from "../../components/loading/Loading";
 
 const SingleProduct = () => {
@@ -40,24 +39,6 @@ const SingleProduct = () => {
 
   const baggedIds = cartState.cart?.map((product) => product._id);
   const isBagged = baggedIds.includes(productId);
-
-  const showToast = () => {
-    toast.info(
-      <div style={{ height: "20px", fontSize: "12px" }}>
-        Product already in Bag
-      </div>,
-      {
-        position: "top-right", // You can choose the position of the toast
-        autoClose: 2000, // Time in milliseconds after which the toast will close automatically
-
-        hideProgressBar: false, // Set to true to hide the progress bar
-        closeOnClick: true, // Set to true to close the toast on click
-        pauseOnHover: true, // Set to true to pause the autoClose timer on hover
-        draggable: true, // Set to true to allow dragging the toast
-        progress: undefined, // Set to undefined for default linear progress bar
-      }
-    );
-  };
 
   useEffect(() => {
     getProductById(productId);
@@ -107,6 +88,7 @@ const SingleProduct = () => {
                     width: "1rem",
                     height: "1rem",
                     backgroundColor: `${color}`,
+                    border: "1px solid lightblue",
                     borderRadius: "50%",
                   }}
                 ></div>
@@ -121,8 +103,18 @@ const SingleProduct = () => {
                     : "action-button wishlist-btn"
                 }
                 onClick={() => {
-                  if (!isWishlisted) {
-                    addToWishlist(currentProductToDisplay, token);
+                  if (token) {
+                    if (!isWishlisted) {
+                      addToWishlist(currentProductToDisplay, token);
+                    } else {
+                      console.log("product is already in wishlist");
+                    }
+                  } else {
+                    toast.warn(
+                      <div style={{ fontSize: "12px" }}>
+                        Please Login to add products to your bag.
+                      </div>
+                    );
                   }
                 }}
               >
@@ -133,10 +125,22 @@ const SingleProduct = () => {
               <div
                 className="action-button bag-btn"
                 onClick={() => {
-                  if (!isBagged) {
-                    addToCart(currentProductToDisplay, token);
+                  if (token) {
+                    if (!isBagged) {
+                      addToCart(currentProductToDisplay, token);
+                    } else {
+                      toast.info(
+                        <div style={{ fontSize: "12px" }}>
+                          Product already in Bag
+                        </div>
+                      );
+                    }
                   } else {
-                    showToast();
+                    toast.warn(
+                      <div style={{ fontSize: "12px" }}>
+                        Please Login to add products to your bag.
+                      </div>
+                    );
                   }
                 }}
               >

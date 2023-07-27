@@ -105,7 +105,7 @@
   border: 1px solid black;
 }
 
-.wishlisted-btn-dp :hover {
+.wishlisted-btn-dp:hover {
   font-size: 11px;
   transition: 600ms;
 }

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import "./productCard.css";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
@@ -19,7 +20,12 @@ const ProductCard = ({ product }) => {
   return (
     <div>
       <div className="product-card">
-        <Link className="product-link" to={`/products/${product._id}`}>
+        <Link
+          title="
+        click to view product details"
+          className="product-link"
+          to={`/products/${product._id}`}
+        >
           <img
             className="productImage"
             src={product.imgurl}
@@ -36,10 +42,18 @@ const ProductCard = ({ product }) => {
             title={isWishlisted ? "Click again to Remove from Wishlist" : ""}
             className={isWishlisted ? "wishlisted-btn" : "notwishlisted-btn"}
             onClick={() => {
-              if (!isWishlisted) {
-                addToWishlist(product, token);
+              if (token) {
+                if (!isWishlisted) {
+                  addToWishlist(product, token);
+                } else {
+                  removeFromWishlist(product._id);
+                }
               } else {
-                removeFromWishlist(product._id);
+                toast.warn(
+                  <div style={{ fontSize: "12px" }}>
+                    Please Login to Add items to your Wishlist.
+                  </div>
+                );
               }
             }}
           >
