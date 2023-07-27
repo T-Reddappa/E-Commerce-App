@@ -36,6 +36,7 @@ export const AuthProvider = ({ children }) => {
       }
     } catch (e) {
       console.log(e.response);
+      toast.warn("User is not registered.Please Signup.");
     }
   };
 

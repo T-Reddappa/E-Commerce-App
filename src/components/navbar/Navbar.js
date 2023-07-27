@@ -5,6 +5,7 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import { toast } from "react-toastify";
 import { WishlistContext } from "../../context/wishlistContext";
 import { AuthContext } from "../../context/authContext";
 import { CartContext } from "../../context/cartContext";
@@ -51,6 +52,15 @@ const Navbar = () => {
 
         <NavLink
           to="/wishlist"
+          onClick={() => {
+            if (!token) {
+              toast.info(
+                <div style={{ fontSize: "14px" }}>
+                  Please Login to view your wishlisted Items.
+                </div>
+              );
+            }
+          }}
           activeClassName="active"
           className="nav-button nav-text"
         >
@@ -68,6 +78,15 @@ const Navbar = () => {
 
         <NavLink
           to="/cart"
+          onClick={() => {
+            if (!token) {
+              toast.info(
+                <div style={{ fontSize: "14px" }}>
+                  Please Login to View your Bag.
+                </div>
+              );
+            }
+          }}
           activeClassName="active"
           className="nav-button nav-text"
         >
@@ -82,7 +101,19 @@ const Navbar = () => {
           <span>Bag</span>
         </NavLink>
 
-        <NavLink to="/profile" className="nav-button  nav-text">
+        <NavLink
+          to="/profile"
+          onClick={() => {
+            if (!token) {
+              toast.info(
+                <div style={{ fontSize: "14px" }}>
+                  Please Login to view your Profile.
+                </div>
+              );
+            }
+          }}
+          className="nav-button  nav-text"
+        >
           <PersonOutlineOutlinedIcon
             className="nav-icons"
             style={{ fontSize: "18px", color: "gray" }}

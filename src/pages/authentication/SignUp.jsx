@@ -20,7 +20,6 @@ const Signup = () => {
   const signupFormHandler = (e) => {
     const { name, value } = e.target;
     setUserCredentials({ ...userCredentials, [name]: value });
-    console.log(userCredentials);
   };
 
   const signup = (e) => {
@@ -29,7 +28,12 @@ const Signup = () => {
 
     signupHandler(firstName, lastName, email, password);
   };
-
+  const handlePasswordVisibility = () => {
+    setUserCredentials({
+      ...userCredentials,
+      hidePassword: !userCredentials.hidePassword,
+    });
+  };
   return (
     <div>
       <div className="signup-cont">
@@ -77,7 +81,7 @@ const Signup = () => {
                 <p>Password</p>
               </label>
               <input
-                type="password"
+                type={userCredentials.hidePassword ? "password" : "text"}
                 placeholder="********"
                 name="password"
                 className="password"
@@ -86,9 +90,14 @@ const Signup = () => {
                 required
               ></input>
             </div>
+
             <div className="signup-forgot-details">
               <div className="remember-me">
-                <input type="checkbox" />
+                <input type="checkbox" onChange={handlePasswordVisibility} />
+                <label> Show Password</label>
+              </div>
+              <div className="remember-me">
+                <input type="checkbox" required />
                 <label>I accept all Terms & Conditions</label>
               </div>
             </div>

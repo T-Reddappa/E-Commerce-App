@@ -22,7 +22,8 @@ const Login = () => {
     setUserCredentials({ ...userCredentials, [name]: value });
   };
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     loginHandler(userCredentials.email, userCredentials.password);
   };
 
@@ -40,7 +41,7 @@ const Login = () => {
   return (
     <div>
       <div className="login-cont">
-        <div className="login-card">
+        <form onSubmit={handleLogin} className="login-card">
           <h3>Login</h3>
           <div className="login-input">
             <label>
@@ -77,7 +78,7 @@ const Login = () => {
             </div>
             <div className="forgot-password">Forgot Password</div>
           </div>
-          <button className="card-button active-button" onClick={handleLogin}>
+          <button className="card-button active-button" type="submit">
             Login
           </button>
           <button
@@ -93,7 +94,7 @@ const Login = () => {
               style={{ fontSize: "12px" }}
             />
           </NavLink>
-        </div>
+        </form>
       </div>
     </div>
   );

@@ -88,15 +88,16 @@
 
 .signup-card {
   width: 400px;
-  height: 90%;
+  /* height: 90%; */
   color: gray;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
   padding-inline: 4rem;
-  padding-block-end: 4rem;
+  padding-block-end: 2rem;
   border-radius: 5px;
+  line-height: 2;
   box-shadow: -2px 4px 8px -1px rgba(183, 168, 168, 0.75);
   -webkit-box-shadow: -2px 4px 8px -1px rgba(183, 168, 168, 0.75);
   -moz-box-shadow: -2px 4px 8px -1px rgba(183, 168, 168, 0.75);
@@ -125,13 +126,16 @@
 }
 
 .signup-input input:focus {
-  outline: 1px solid lightblue;
+  outline: 2px solid lightblue;
   border: 1px solid white;
 }
 
 .signup-forgot-details {
+  margin-top: 0.3rem;
   display: flex;
-  font-size: 0.8rem;
+  font-size: 12px;
+  text-align: start;
+  flex-direction: column;
   align-items: baseline;
   justify-content: space-between;
   width: 100%;
